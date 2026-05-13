@@ -5,6 +5,6 @@ langchain-groq
 langchain-huggingface
 langchain-core
 langchain-text-splitters
-chromadb
+langchain-chroma
 python-dotenv
 sentence-transformers
