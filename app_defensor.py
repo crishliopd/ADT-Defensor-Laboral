@@ -1,3 +1,15 @@
+import sys
+
+# 1. Parche para la base de datos (Evita errores de versión de SQLite)
+try:
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass
+
+# 2. Parche para el error de Protobuf (El que te está saliendo ahora)
+import os
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import os
 import streamlit as st
 from dotenv import load_dotenv
