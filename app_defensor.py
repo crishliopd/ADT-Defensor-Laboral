@@ -59,13 +59,13 @@ def configurar_motor_rag():
 # 3. Lógica del Modelo de Lenguaje (LLM)
 retriever = configurar_motor_rag()
 
-# Corregida la sintaxis (coma agregada después de temperature)
+api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+
 llm = ChatGroq(
     model_name="llama-3.3-70b-versatile", 
     temperature=0.3, 
-    groq_api_key="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"
+    groq_api_key=api_key
 )
-
 # 4. Prompt de Sistema "Experto"
 template = """Actúa como el 'Defensor Laboral ADT', un experto en derecho laboral colombiano. 
 
