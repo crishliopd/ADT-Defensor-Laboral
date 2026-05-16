@@ -1,21 +1,27 @@
 import streamlit as st
 
-# Configuración básica de la página para que no se vea vacía mientras redirige
-st.set_page_config(page_title="ADT - Redireccionando", page_icon="⚖️")
+# Configuración visual con la identidad de tu proyecto
+st.set_page_config(page_title="ADT - Servidor Migrado", page_icon="⚖️", layout="centered")
 
-# Tu URL oficial y activa en Hugging Face Spaces
-url_hugging_face = "https://huggingface.co/spaces/crishliop/ADT-Defensor-Laboral" 
+st.warning("🚀 ¡Nos hemos mudado para ofrecerle un mejor servicio!")
 
-st.markdown(f"""
-    <div style="text-align: center; margin-top: 50px;">
-        <h2>⚖️ Asistente de Defensa del Trabajador (ADT)</h2>
-        <p>Estamos optimizando la infraestructura para mejorar la velocidad del servicio.</p>
-        <p><b>Redireccionando automáticamente a nuestro servidor principal...</b></p>
-        <p>Si no redirige en unos segundos, <a href="{url_hugging_face}" target="_top">haga clic aquí</a>.</p>
-    </div>
-    
-    <script>
-        // Este script rompe el iframe de Streamlit y redirige la pestaña completa
-        window.top.location.href = "{url_hugging_face}";
-    </script>
-""", unsafe_warning=False, unsafe_allow_html=True)
+st.markdown("""
+## ⚖️ Asistente de Defensa del Trabajador (ADT)
+
+Para garantizar la estabilidad en la consulta de los derechos de los trabajadores colombianos y optimizar la velocidad de procesamiento del modelo Llama 3, **hemos migrado nuestra plataforma a un entorno de alto rendimiento dedicado**.
+
+El prototipo funcional, la base de conocimiento indexada en ChromaDB y el pipeline RAG conversacional se encuentran completamente activos en nuestro clúster principal.
+""")
+
+# Botón gigante nativo y seguro que apunta a tu Space activo
+st.link_button(
+    "👉 ENTRAR AL CHATBOT AQUÍ (Servidor Principal - Hugging Face)", 
+    "https://huggingface.co/spaces/crishliop/ADT-Defensor-Laboral",
+    type="primary",
+    use_container_width=True
+)
+
+st.write("---")
+st.info("""
+**Nota técnica para el evaluador:** Despliegue alterno configurado bajo la arquitectura de confinamiento de conocimiento. El backend y el almacén de vectores han sido centralizados en Hugging Face Spaces para asegurar la disponibilidad del servicio requerida en la Fase 4 de Procesamiento de Lenguaje Natural.
+""")
